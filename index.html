@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+        <title>Tango Mango Orders</title>
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+        
+        <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
+        
+        <link rel="stylesheet" media="print" href="css/print.css" type="text/css">
+        
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    </head>
+
+    <body>
+        <div class="container center the-max-width">
+            <div class="row the-max-width">
+                <form method="post"
+                role="form" id="form" name="form">
+                    <input type= "hidden" name="dest_email" value="velozmontero@gmail.com">
+                        
+                    <div class="row p-bottom no-print" style="background-color: #eeeeee; border: 1px solid #dadada;">
+                        <div class="col s12">
+                            <div class="col s12 m12 l4">
+                                <div class="input-field col s6">
+                                   <input type="text" id="order-style" name="order-style" class="center validate">
+                                   <label for="order-style">STYLE</label>
+                                </div>
+                                <div class="input-field col s6">
+                                   <input type="text" id="order-color" name="order-color" class="center validate">
+                                   <label for="order-color">COLOR</label>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m12 l8">
+                                <div class="input-field col s2">
+                                   <input type="number" min="0" max="5000" id="size-xs" name="size-xs" class="center validate">
+                                   <label for="size-xs">XS</label>
+                                </div>
+                                <div class="input-field col s2">
+                                   <input type="number" min="0" max="5000" id="size-s" name="size-s" class="center validate">
+                                   <label for="size-s">S</label>
+                                </div>
+                                <div class="input-field col s2">
+                                   <input type="number" min="0" max="5000" id="size-m" name="size-m" class="center validate">
+                                   <label for="size-m">M</label>
+                                </div>
+                                <div class="input-field col s2">
+                                   <input type="number" min="0" max="5000" id="size-l" name="size-l" class="center validate">
+                                   <label for="size-l">L</label>
+                                </div>
+                                <div class="input-field col s2">
+                                   <input type="number" min="0" max="5000" id="size-xl" name="size-xl" class="center validate">
+                                   <label for="size-xl">XL</label>
+                                </div>
+                                <div class="input-field col s2">
+                                   <input type="number" min="0" max="5000" id="size-xxl" name="size-xxl" class="center validate">
+                                   <label for="size-xxl">XXL</label>
+                                </div>
+                            </div>
+
+
+                            <div class="input-field col s12">
+                                <div class="input-field col s5"><h5 class="grey-text">PRICE: <span class="right">$</span></h5></div>
+                                <div class="input-field col s3 l2 no-padding">
+                                    <input type="number" step="0.01" min="0" max="500" id="r-price" name="r-price" class="validate box-border center">
+                                </div>
+                            </div>     
+
+                            <div class="col s12 b-color" style="background-color: white;">
+
+                                <div class="input-field col s5"><h5 class="blue-text"><i><strong>PLUS SIZES</strong></i></h5></div>
+
+                                <div class="col s7">
+                                    <div class="input-field col s4">
+                                       <input type="number" min="0" max="5000" id="size-1x" name="size-1x" class="center validate">
+                                       <label for="size-1x">1X</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                       <input type="number" min="0" max="5000" id="size-2x" name="size-2x" class="center validate">
+                                       <label for="size-2x">2X</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                       <input type="number" min="0" max="5000" id="size-3x" name="size-3x" class="center validate">
+                                       <label for="size-3x">3X</label>
+                                    </div> 
+                                </div>
+                                <div class="input-field col s12">
+                                    <div class="input-field col s5"><h5 class="blue-text"><i><strong>PRICE:</strong></i><span class="right">$</span></h5></div>
+                                    <div class="input-field col s3 l2 no-padding">
+                                        <input type="number" step="0.01" min="0.00" max="500.00" id="x-price" name="x-price" class="validate box-border center">
+                                    </div>
+                               </div> 
+                            </div>  
+
+                            <div class="col s12 no-print">
+                                <div class="input-field col s12 no-print">
+                                  <textarea id="description" name="description" class="no-print materialize-textarea no-padding"></textarea>
+                                  <label for="description">Description: </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--buttons start-->
+
+                            <div class="col s6 center m-top">
+                                <div class="btn-add-clear btn waves-effect blue darken-3  waves-light z-depth-2 " name="add-style" id="add-style" >ADD STYLE
+                                <i class="material-icons prefix right">assignment</i>
+                                </div>
+                            </div>
+                             <div class="col s6 center m-top">
+                                <div class="btn-add-clear btn waves-effect red darken-3  waves-light z-depth-2 " name="clear-style" id="clear-style">CLEAR 
+                                <i class="material-icons prefix right">list</i>
+                                </div>
+                            </div>
+
+                        <!--buttons end-->
+
+                        </div>
+                    
+                    
+                        <h5 class="no-print">ORDER OVERVIEW</h5>
+                        <div class="row no-print">
+                            <table class="striped centered" id="order-ow" name="order-ow" style="width: 100%;">
+                                
+                               <thead style="width: 100%;">
+                                      <tr style="width: 100%;">
+                                          <th data-field="style" style="padding-right: 0px !important;">STYLE</th>
+                                          <th data-field="color" style="padding-right: 0px !important;">COLOR</th>
+                                          <th data-field="color" style="padding-right: 0px !important;" class="hide-on-med-and-down">DESCRIPTION</th>
+                                          <th data-field="xs">XS</th>
+                                          <th data-field="s">S</th>
+                                          <th data-field="m">M</th>
+                                          <th data-field="l">L</th>
+                                          <th data-field="xl">XL</th>
+                                          <th data-field="xxl">XXL</th>
+                                          
+                                          <th data-field="qtyr" class="hide-on-med-and-down">Qty</th>
+                                          <th data-field="pricer" class="hide-on-med-and-down">PRICE</th>
+                                          
+                                          <th data-field="1x">1X</th>
+                                          <th data-field="2x">2X</th>
+                                          <th data-field="3x">3X</th>
+                                          
+                                          <th data-field="qtyx" class="hide-on-med-and-down">Qty</th>
+                                          <th data-field="pricex" class="hide-on-med-and-down">PRICE</th>
+                                          
+                                          <th data-field="3x" class="hide-on-med-and-down">TOTAL</th>
+                                          <th data-field="3x" class="hide-on-med-and-down">AMOUNT</th>
+                                      </tr>
+                                    </thead>
+
+                                <tbody id="order-ow-tbody" name="order-ow-tbody" style="width: 100%;">
+                                  
+                                </tbody>
+                              </table>
+                            
+                            <table style="width: 100%; padding-top: 10px;" class="striped centered">
+                                <thead style="width: 100%;">
+                                    <tr style="width: 100%; background-color: #2c5dbe;">
+                                        <th data-field="order-total-money" style="padding-right: 0px !important; padding-top: 15px; padding-bottom: 15px;" class="white-text">TOTAL PCS:</th>
+                                        <th id="tpcs" name="tpcs" data-field="pcs" style="padding-right: 0px !important;  padding-top: 15px; padding-bottom: 15px;"></th>
+                                        <th data-field="order-total-pcs" style="padding-right: 0px !important; padding-top: 15px; padding-bottom: 15px;" class="white-text">FULL AMOUNT:</th>
+                                        <th id="tmoney" name="tmoney" data-field="money" style="padding-right: 0px !important;  padding-top: 15px; padding-bottom: 15px;"></th>
+                                    </tr>
+
+                                </thead>
+                            </table>
+                                   
+                        </div>
+          
+                        <div class="row no-print">
+                            <div class="col s12 m6">
+                                 <div class="input-field col s2  " style="display: block;">
+                                    <i class="material-icons prefix" style="position: relative !important;">payment</i>   
+                                 </div>
+
+                                 <div class="input-field col xs10 s10 m10">
+                                    <select class="browser-default" id="terms" name="terms" >
+                                      <option value="" disabled selected>Select-Terms</option>
+                                      <option value="E-mail Blast - USA">E-mail Blast - USA</option>
+                                      <option value="E-mail Blast - CA">E-mail Blast - CA</option>    
+                                      <option value="Specific Customer">Specific Customer</option>
+                                    </select>
+                                 </div>
+                            </div>
+                            
+                            <div class="col s12 m6">
+                                <div class="input-field col s2" style="display: block;">
+                                    <i class="material-icons prefix" style="position: relative !important;">perm_identity</i>
+                                 </div>
+
+                                 <div class="input-field col xs10 s10 m10">
+                                    <select class="browser-default" id="rep" name="rep" >
+                                      <option value="" disabled selected>Sales-Representative</option>
+                                      <option value="Tom Stain">Tom Stain</option>
+                                      <option value="Mindy Carlson">Mindy Carlson</option>    
+                                      <option value="Kathy Johnson">Kathy Johnson</option>
+                                      <option value="Jon Katz">Jon Katz</option>
+                                      <option value="Barry Burtman">Barry Burtman</option>
+                                      <option value="Daug Taub">Daug Taub</option>
+                                      <option value="Holly Alden">Holly Alden</option>
+                                      <option value="Joey Collins">Joey Collins</option>
+                                      <option value="Marry Saunders">Marry Saunders</option>
+                                      <option value="Joe Ackerman">Joe Ackerman</option> 
+                                      <option value="Kathrine Turner">Kathrine Turner</option>
+                                      <option value="Barbara B. Fraizer">Barbara B. Fraizer</option>
+                                      <option value="Diane B. Zundel">Diane B. Zundel</option>    
+                                    </select>
+                                </div>
+                            </div>
+                            
+                        </div> 
+                        
+                        <div class="row no-print">
+                            <div class="input-field col s12 m12 l6 no-padding">
+                                <div class="input-field col s4 m4 l4 no-padding"><label for="odate">Request Date:</label></div>
+                                <div class="input-field col s8 m8 l8"><input id="odate" name="odate" type="date" class="datepicker" style="text-align: center" ></div>
+                            </div>
+                            
+                            <div class="input-field col s12 m12 l6 no-padding">
+                                <div class="input-field col s4 m4 l4 no-padding"><label for="sdate">Due Date:</label></div>
+                                <div class="input-field col s8 m8 l8"><input id="sdate" name="sdate" type="date" class="datepicker" style="text-align: center" ></div>
+                            </div>
+
+                        </div>
+                        
+                        <div class="row no-print">
+                            <div class="input-field col s12 l6">
+                               <i class="material-icons prefix">store</i>
+                               <input type="text" id="store-name" name="store-name" class="validate" >
+                               <label for="name">Store Name</label>
+                            </div>
+                            
+                            <div class="input-field col s12 l6">
+                               <i class="material-icons prefix">phone</i>
+                               <input type="tel" id="phone" name="phone" class="validate" >
+                               <label for="phone">Telephone</label>
+                           </div>
+                        </div>
+                        
+                        <div class="row no-print">    
+                            <div class="input-field col s12 l6">
+                                <i class="material-icons prefix">email</i>
+                               <input type="email" id="email" name="email" class="validate" >
+                               <label for="email">Email</label>
+                            </div>
+                            
+                            <div class="input-field col s12 l6">
+                               <i class="material-icons prefix">assignment_ind</i>
+                               <input type="text" id="buyer" name="buyer" class="validate" >
+                               <label for="name">Buyer</label>
+                            </div>
+                        </div>
+                            
+                        <div id="sipInst" class="row no-print no-print">
+                            <div class="input-field col s12 no-print">
+                                  <textarea id="shipping-instructions" class="no-print materialize-textarea no-padding"></textarea>
+                                  <label class="no-print" for="shipping-instructions">Notes:</label>
+                            </div>
+                        </div> 
+                    
+                    <div id="main-email-body">
+                        <table style="width: 100%;">
+                                <table style="width: 100%;">
+                                    <thead style="width: 100%;">
+                                       
+
+                                        <tr style="width: 100%;">
+                                            <img class="responsive-img" src="http://velozmontero.fvi-grad.com/tangomangoorders/img/logo.png"><br>
+                                            <span>
+                                                3100 NW 72nd Ave Suite 117, Miami FL, 33122<br> 
+                                                Tel: 305-266-2900 &nbsp;
+                                                Fax: 786-603-7999<br>
+                                                tangomangousa@gmail.com
+                                            </span>
+                                        </tr>
+                                        <tr style="width: 100%;">
+                                            <th>
+
+                                            </th>
+                                        
+                                            <th style="float: right;">
+                                                <p style="text-align: right;">
+                                                    <span id="order-number"></span><br><br>
+                                                    <span id="order-date"></span><br>
+                                                    <span id="ship-date"></span><br>
+                                                    <span id="cancel-date"></span>
+                                                </p>
+                                            </th>
+                                        </tr>
+                                    
+                                        
+                                        <tr style="width: 100%;">
+
+                                            <th style="border: 2px solid;  width: 50%;">
+                                                <p style="text-align: left; padding-left: 20px; padding-right: 20px;">
+                                                    <span>Cad For:</span><br><br>
+                                                    <span id="sold-to-store-name" name="sold-to-store-name"></span><br>  
+                                                    <span id="sold-to-phone" name="sold-to-phone"></span><br>
+                                                    <span id="sold-to-email" name="sold-to-email"></span><br>
+                                                </p>
+                                            </th>
+
+                                            <th style="border: 2px solid; width: 50%; padding: 0px;">
+                                                <p style="text-align: left; padding-left: 20px; padding-right: 20px;">
+                                                    <span>Notes:</span><br>
+                                                    <span id="ship-to-instr" name="ship-to-instr"></span>
+                                                    <span><!--space to make it visualy even--></span><br><br><span><!--space to make it visualy even--></span><br><br>
+                                                </p>    
+                                            </th>
+                                        </tr>
+                                      
+                                        <tr style="width: 100%;"><th><!--Spacer--></th><th><!--Spacer--></th></tr>
+                                    </thead>
+                                </table>
+            
+                                <table style="width: 100%;">
+                                    <thead style="width: 100%;">
+                                        <tr style="width: 100%;">
+                                            <th style="border: 2px solid; width: 25%;">
+                                               <span id="buyer-1" name="buyer-1">Buyer:</span><br>
+                                            </th>
+                                        
+                                            <th style="border: 2px solid;  width: 25%;">
+                                               <span id="sales-rep" name="sales-rep">Sales Rep:</span><br>
+                                            </th>
+                                            
+                                            <th style="border: 2px solid;  width: 25%;">
+                                               <span id="ship-via" name="ship-via">Ship Via: UPS</span><br>
+                                            </th>
+                                            
+                                            <th style="border: 2px solid;  width: 25%;">
+                                               <span id="terms-1" name="terms-1">Terms:</span><br>
+                                            </th>
+                                           
+                                        </tr>
+                                    </thead>
+                                </table>
+                                
+                                <table class="striped centered" id="order" name="order" style="width: 100%;">
+                                    <thead style="width: 100%;">
+                                      <tr style="width: 100%;">
+                                          <th data-field="style" style="padding-right: 0px !important;">STYLE</th>
+                                          <th data-field="color" style="padding-right: 0px !important;">COLOR</th>
+                                          <th data-field="color" style="padding-right: 0px !important;" class="hide-on-med-and-down">DESCRIPTION</th>
+                                          <th data-field="xs">XS</th>
+                                          <th data-field="s">S</th>
+                                          <th data-field="m">M</th>
+                                          <th data-field="l">L</th>
+                                          <th data-field="xl">XL</th>
+                                          <th data-field="xxl">XXL</th>
+                                          
+                                          <th data-field="qtyr" class="hide-on-med-and-down">Qty</th>
+                                          <th data-field="pricer" class="hide-on-med-and-down">PRICE</th>
+                                          
+                                          <th data-field="1x">1X</th>
+                                          <th data-field="2x">2X</th>
+                                          <th data-field="3x">3X</th>
+                                          
+                                          <th data-field="qtyx" class="hide-on-med-and-down">Qty</th>
+                                          <th data-field="pricex" class="hide-on-med-and-down">PRICE</th>
+                                          
+                                          <th data-field="3x" class="hide-on-med-and-down">TOTAL</th>
+                                          <th data-field="3x" class="hide-on-med-and-down">AMOUNT</th>
+                                      </tr>
+
+                                    </thead>
+
+                                    <tbody id="table-body" name="table-body" style="text-align: center; width: 100%;">
+
+                                    </tbody>
+                                </table>
+
+                                <table style="width: 100%; padding-top: 10px;" class="striped centered">
+                                    <thead style="width: 100%;">
+                                        <tr style="width: 100%; background-color: #2c5dbe;">
+                                            <th data-field="order-total-money" style="padding-right: 0px !important; padding-top: 15px; padding-bottom: 15px;" class="white-text">TOTAL PCS:</th>
+                                            <th id="tpcs-1" name="tpcs-1" data-field="pcs" style="padding-right: 0px !important;  padding-top: 15px; padding-bottom: 15px;" class="white-text"></th>
+                                            <th data-field="order-total-pcs" style="padding-right: 0px !important; padding-top: 15px; padding-bottom: 15px;" class="white-text">FULL AMOUNT:</th>
+                                            <th id="tmoney-1" name="tmoney-1" data-field="money" style="padding-right: 0px !important;  padding-top: 15px; padding-bottom: 15px;" class="white-text"></th>
+                                        </tr>
+
+                                    </thead>
+                                </table>    
+                            
+                        </table> 
+                    </div>
+              
+                    <input type="hidden" id="htmltable" name="htmltable" value="">
+            
+                    
+                    <div class="row p-top no-print">
+                        <input type= "hidden" name="dest_email" value="velozmontero@gmail.com">
+
+                        <div class="center">
+                            <button class="btn waves-effect grey darken-3 waves-light z-depth-2 " type="submit" name="btn" id="btn">Send
+                            <i class="material-icons prefix right">send</i>
+                            </button>
+                            <div class="hidden" id="msg" name="btn" class="hidden"></div>
+                        
+                            <div class="btn waves-effect grey darken-3 waves-light z-depth-2 " name="ptr" id="ptr">Print
+                            <i class="material-icons prefix right">print</i>
+                            </div>
+                            <div class="hidden" id="msg" name="btn" class="hidden"></div>
+                        </div>
+                    </div>
+                       
+                </form>   
+            </div>
+        </div>         
+        
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        
+        <script type="text/javascript" src="http://velozmontero.fvi-grad.com/tangomangoorders/materialize/js/materialize.min.js"></script>
+        
+        <script>$('.datepicker').pickadate({
+            selectMonths: true,
+            selectYears: 2,
+            format: 'mm/dd/yyyy'
+        });</script>
+         
+        <script type="text/javascript" src="js/orders.js"></script>
+        <script type="text/javascript" src="js/jQuery.print.js"></script>
+        <script type="text/javascript" src="js/form-validation.js"></script>
+    </body>
+  </html>
