@@ -54,6 +54,7 @@
     <splash src="res/screen/wp8/screen-portrait.jpg" platform="wp8" width="768" height="1280"/>
   </platform>
   <access origin="*"/>
+  <access origin="http://159.203.70.55:3000" />
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>

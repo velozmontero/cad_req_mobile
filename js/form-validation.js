@@ -34,7 +34,7 @@ $(document).on("submit", "#form", function(e){
     
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/email",
+        url: "http://159.203.70.55:3000/email",
         data: form.serialize(),
         success: function (response) {
           $('#msg').html("Thank you for your business");    
